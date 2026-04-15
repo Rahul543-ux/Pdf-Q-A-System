@@ -2,7 +2,8 @@ import streamlit as st
 import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings, HuggingFaceHub
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.llms import HuggingFaceHub
 from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 
