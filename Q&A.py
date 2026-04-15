@@ -5,7 +5,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.llms import HuggingFaceHub
 from langchain_community.vectorstores import FAISS
-from langchain.chains import RetrievalQA
+from langchain_community.chains import RetrievalQA
 
 # Get API Key from environment (set in previous cell)
 api_key = os.environ.get("HUGGINGFACEHUB_API_TOKEN")
