@@ -1,8 +1,0 @@
-langchain
-langchain-community
-openai
-groq
-pypdf
-faiss-cpu
-tiktoken
-streamlit
