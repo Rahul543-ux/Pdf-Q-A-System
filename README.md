@@ -38,17 +38,17 @@ Built using:
 
 Create a `requirements.txt` file:
 
-streamlit 
-langchain 
-langchain-community 
-langchain-huggingface 
-langchain-text-splitters 
-langchain-groq 
-langchain-core 
-huggingface-hub 
-pypdf 
-faiss-cpu 
-sentence-transformers
+1.streamlit 
+2.langchain 
+3.langchain-community 
+4.langchain-huggingface 
+5.langchain-text-splitters 
+6.langchain-groq 
+7.langchain-core 
+8.huggingface-hub 
+9.pypdf 
+10.faiss-cpu 
+11.sentence-transformers
 
 ---
 
@@ -60,7 +60,7 @@ You need a Groq API Key.
 
 **For local:**
 ```bash
-export GROQ_API_KEY="your_api_key"
+<export> GROQ_API_KEY="your_api_key"
 
 For Streamlit Cloud:
 Go to Secrets
@@ -68,17 +68,17 @@ Add:
 
 GROQ_API_KEY = "your_api_key"
 
-▶️ Run the App
+## ▶️ Run the App
 Bash
 streamlit run app.py
 
-⚠️ Important Notes
+## ⚠️ Important Notes
 HuggingFace is used only for embeddings (no API issues)
 Groq is used for LLM → fast + reliable
 Context is limited to avoid token overflow
 Works best with small to medium PDFs
 
-🛠️ Tech Stack
+#₹ 🛠️ Tech Stack
 
 Python
 Streamlit
@@ -87,16 +87,16 @@ FAISS
 HuggingFace Transformers
 Groq API
 
-📌 Future Improvements
+## 📌 Future Improvements
 
 Chat history (memory)
 Multiple PDF support
 Better UI
 Streaming responses
 
-👨‍💻 Author
+## 👨‍💻 Author
 Rahul Prasad
 
-⭐ If you like this project
+## ⭐ If you like this project
 
 Give it a ⭐ on GitHub!
