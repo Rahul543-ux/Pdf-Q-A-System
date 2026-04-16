@@ -57,9 +57,13 @@ if uploaded_file is not None:
                     "Answer:"
                 )
 
+                # 🔥 FIX: retriever → text conversion
+                def format_docs(docs):
+                    return "\n\n".join(doc.page_content for doc in docs)
+
                 chain = (
                     {
-                        "context": retriever, 
+                        "context": retriever | format_docs,   # ✅ FIXED
                         "question": RunnablePassthrough()
                     }
                     | prompt
