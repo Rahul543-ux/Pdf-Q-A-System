@@ -48,7 +48,7 @@ if uploaded_file is not None:
 
                 llm = ChatGroq(
                     api_key=groq_key,
-                    model_name= "llama3-8b-8192",
+                    model_name= "t5-small",
                     temperature=0.3
                 )
 
