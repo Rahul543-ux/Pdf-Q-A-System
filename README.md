@@ -61,3 +61,9 @@ You need a Groq API Key.
 **For local:**
 ```bash
 export GROQ_API_KEY="your_api_key"
+
+**For Streamlit Cloud:**
+Go to Secrets
+Add:
+```bash
+GROQ_API_KEY = "your_api_key"
