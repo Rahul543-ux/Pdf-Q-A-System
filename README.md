@@ -70,3 +70,55 @@ export GROQ_API_KEY="your_api_key"
 -Add:
 ```bash
 GROQ_API_KEY = "your_api_key"
+
+```
+
+## ▶️ Run the App
+
+```bash
+streamlit run app.py
+
+```
+
+---
+
+## ⚠️ Important Notes
+
+HuggingFace is used only for embeddings (no API issues)
+Groq is used for LLM → fast + reliable
+Context is limited to avoid token overflow
+Works best with small to medium PDFs
+
+---
+
+## 🛠️ Tech Stack
+
+Python
+Streamlit
+LangChain
+FAISS
+HuggingFace Transformers
+Groq API
+
+---
+
+## 📌 Future Improvements
+
+Chat history (memory)
+Multiple PDF support
+Better UI
+Streaming responses
+
+---
+
+## 👨‍💻 Author
+
+Rahul Prasad
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
+
+---
