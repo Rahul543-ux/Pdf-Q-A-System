@@ -9,4 +9,3 @@ huggingface-hub
 pypdf
 faiss-cpu
 sentence-transformers
-tiktoken
