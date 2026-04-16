@@ -52,4 +52,12 @@ Create a `requirements.txt` file.
 
 ---
 
-## 
+## 🔑 Environment Variables
+
+You need a Groq API Key.
+
+### 👉 Set API key:
+
+**For local:**
+```bash
+export GROQ_API_KEY="your_api_key"
