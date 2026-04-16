@@ -3,6 +3,7 @@ langchain
 langchain-community
 langchain-huggingface
 langchain-text-splitters
+langchain-groq
 langchain-core
 huggingface-hub
 pypdf
