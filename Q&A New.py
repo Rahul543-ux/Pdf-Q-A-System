@@ -44,7 +44,7 @@ if uploaded_file is not None:
         else:
             with st.spinner("Generating answer..."):
                 llm = HuggingFaceEndpoint(
-                    repo_id="tiiuae/falcon-7b-instruct",
+                    repo_id="mistralai/Mistral-7B-Instruct-v0.1",
                     huggingfacehub_api_token=api_key,
                     temperature=0.3,
                     max_new_tokens=512
