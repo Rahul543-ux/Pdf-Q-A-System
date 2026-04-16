@@ -84,30 +84,30 @@ streamlit run app.py
 
 ## ⚠️ Important Notes
 
-HuggingFace is used only for embeddings (no API issues)
-Groq is used for LLM → fast + reliable
-Context is limited to avoid token overflow
-Works best with small to medium PDFs
+- HuggingFace is used only for embeddings (no API issues)
+- Groq is used for LLM → fast + reliable
+- Context is limited to avoid token overflow
+- Works best with small to medium PDFs
 
 ---
 
 ## 🛠️ Tech Stack
 
-Python
-Streamlit
-LangChain
-FAISS
-HuggingFace Transformers
-Groq API
+- Python
+- Streamlit
+- LangChain
+- FAISS
+- HuggingFace Transformers
+- Groq API
 
 ---
 
 ## 📌 Future Improvements
 
-Chat history (memory)
-Multiple PDF support
-Better UI
-Streaming responses
+- Chat history (memory)
+- Multiple PDF support
+- Better UI
+- Streaming responses
 
 ---
 
