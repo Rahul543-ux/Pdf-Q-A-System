@@ -41,7 +41,7 @@ if uploaded_file is not None:
             with st.spinner("Generating answer..."):
                 llm = HuggingFaceHub(
                     repo_id="google/flan-t5-base",
-                    huggingfacehub_api_token=api_key,
+                    HUGGINGFACEHUB_API_TOKEN = api_key,
                     model_kwargs={"temperature": 0.3, "max_length": 512}
                 )
 
