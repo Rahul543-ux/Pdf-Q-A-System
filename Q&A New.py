@@ -2,13 +2,15 @@ import streamlit as st
 import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings, HuggingFaceEndpoint
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
-api_key = os.environ.get("HUGGINGFACEHUB_API_TOKEN")
+hf_key = os.environ.get("HUGGINGFACEHUB_API_TOKEN")
+groq_key = os.environ.get("GROQ_API_KEY")
 
 st.set_page_config(page_title="PDF Q&A System", layout="wide")
 st.title("📄 PDF Q&A System")
@@ -23,7 +25,7 @@ if uploaded_file is not None:
     documents = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000, 
+        chunk_size=1000,
         chunk_overlap=200
     )
     texts = text_splitter.split_documents(documents)
@@ -39,31 +41,30 @@ if uploaded_file is not None:
     query = st.text_input("Ask a question about your PDF")
 
     if query:
-        if not api_key:
-            st.error("Hugging Face Token not found!")
+        if not groq_key:
+            st.error("Groq API Key not found in Secrets!")
         else:
             with st.spinner("Generating answer..."):
-                llm = HuggingFaceEndpoint(
-                    repo_id="mistralai/Mistral-7B-Instruct-v0.1",
-                    huggingfacehub_api_token=api_key,
-                    temperature=0.3,
-                    max_new_tokens=512
+
+                llm = ChatGroq(
+                    api_key=groq_key,
+                    model_name="llama3-8b-8192",
+                    temperature=0.3
                 )
 
+                def format_docs(docs):
+                    return "\n\n".join(doc.page_content for doc in docs)
+
                 prompt = PromptTemplate.from_template(
-                    "Answer the question based on the context.\n"
+                    "Answer the question based on the context below.\n"
                     "Context: {context}\n"
                     "Question: {question}\n"
                     "Answer:"
                 )
 
-                # 🔥 FIX: retriever → text conversion
-                def format_docs(docs):
-                    return "\n\n".join(doc.page_content for doc in docs)
-
                 chain = (
                     {
-                        "context": retriever | format_docs,   # ✅ FIXED
+                        "context": retriever | format_docs,
                         "question": RunnablePassthrough()
                     }
                     | prompt
