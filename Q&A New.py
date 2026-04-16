@@ -25,7 +25,7 @@ if uploaded_file is not None:
     documents = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
+        chunk_size=500,
         chunk_overlap=200
     )
     texts = text_splitter.split_documents(documents)
