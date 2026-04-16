@@ -25,7 +25,7 @@ if uploaded_file is not None:
     documents = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
+        chunk_size=1000,
         chunk_overlap=200
     )
     texts = text_splitter.split_documents(documents)
@@ -48,7 +48,7 @@ if uploaded_file is not None:
 
                 llm = ChatGroq(
                     api_key=groq_key,
-                    model_name= "llama3-70b-8192",
+                    model_name= "llama3-8b-8192",
                     temperature=0.3
                 )
 
