@@ -3,7 +3,7 @@ import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.llms import HuggingFaceHub
+from Langchain_huggingface import HuggingFaceEndpoint
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
@@ -23,10 +23,15 @@ if uploaded_file is not None:
     loader = PyPDFLoader("temp.pdf")
     documents = loader.load()
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1000, 
+        chunk_overlap=200
+    )
     texts = text_splitter.split_documents(documents)
 
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )
     db = FAISS.from_documents(texts, embeddings)
     retriever = db.as_retriever()
 
@@ -39,18 +44,25 @@ if uploaded_file is not None:
             st.error("Hugging Face Token not found!")
         else:
             with st.spinner("Generating answer..."):
-                llm = HuggingFaceHub(
+                llm = HuggingFaceEndpoint(
                     repo_id="google/flan-t5-base",
-                    HUGGINGFACEHUB_API_TOKEN = api_key,
-                    model_kwargs={"temperature": 0.3, "max_length": 512}
+                    huggingfacehub_api_token=api_key,
+                    temperature=0.3,
+                    max_new_tokens=512
                 )
 
                 prompt = PromptTemplate.from_template(
-                    "Answer the question based on the context below.\nContext: {context}\nQuestion: {question}\nAnswer:"
+                    "Answer the question based on the context.\n"
+                    "Context: {context}\n"
+                    "Question: {question}\n"
+                    "Answer:"
                 )
 
                 chain = (
-                    {"context": retriever, "question": RunnablePassthrough()}
+                    {
+                        "context": retriever, 
+                        "question": RunnablePassthrough()
+                    }
                     | prompt
                     | llm
                     | StrOutputParser()
