@@ -36,19 +36,19 @@ Built using:
 
 ## 📦 Requirements
 
-Create a `requirements.txt` file:
+Create a `requirements.txt` file.
 
-1.streamlit 
-2.langchain 
-3.langchain-community 
-4.langchain-huggingface 
-5.langchain-text-splitters 
-6.langchain-groq 
-7.langchain-core 
-8.huggingface-hub 
-9.pypdf 
-10.faiss-cpu 
-11.sentence-transformers
+1. streamlit 
+2. langchain 
+3. langchain-community 
+4. langchain-huggingface 
+5. langchain-text-splitters 
+6. langchain-groq 
+7. langchain-core 
+8. huggingface-hub 
+9. pypdf 
+10. faiss-cpu 
+11. sentence-transformers
 
 ---
 
