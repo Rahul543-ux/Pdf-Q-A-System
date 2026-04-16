@@ -76,7 +76,7 @@ GROQ_API_KEY = "your_api_key"
 ## ▶️ Run the App
 
 ```bash
-streamlit run app.py
+click your "app.py" in Streamlit
 
 ```
 
