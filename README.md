@@ -4,6 +4,8 @@
 
 A simple AI-powered app that allows you to upload a PDF and ask questions based on its content.
 
+st.info("⚡ First load may take few seconds (free hosting)")
+
 Built using:
 - Streamlit (UI)
 - LangChain (pipeline)
