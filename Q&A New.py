@@ -44,7 +44,7 @@ if uploaded_file is not None:
         else:
             with st.spinner("Generating answer..."):
                 llm = HuggingFaceEndpoint(
-                    repo_id="google/flan-t5-base",
+                    repo_id="tiiuae/falcon-7b-instruct",
                     huggingfacehub_api_token=api_key,
                     temperature=0.3,
                     max_new_tokens=512
