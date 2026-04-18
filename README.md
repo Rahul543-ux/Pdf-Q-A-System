@@ -123,7 +123,15 @@ click your "app.py" in Streamlit
 
 ## 👨‍💻 Author
 
-Rahul Prasad
+**Rahul Prasad** — AI/ML Learner | Building real-world AI projects  
+📍 Jamshedpur, India  
+🔗 [GitHub](https://github.com/Rahul543-ux)
+
+---
+
+## 📜 License
+
+MIT License — free to use, modify, and distribute.
 
 ---
 
