@@ -46,7 +46,7 @@ if uploaded_file is not None:
                 try:
                     llm = ChatGroq(
                         api_key=groq_key,
-                        model_name="llama-3.1-8b-instant",
+                        model_name="llama-3.3-70b-versatile",
                         temperature=0.3,
                         max_tokens=256
                     )
