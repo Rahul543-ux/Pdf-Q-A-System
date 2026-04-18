@@ -1,10 +1,6 @@
 # 📄 PDF Q&A System (AI Powered)
 
-🔗 Live App: https://pdf-q-a-system-rp.streamlit.app/
-
 A simple AI-powered app that allows you to upload a PDF and ask questions based on its content.
-
-st.info("⚡ First load may take few seconds (free hosting)")
 
 Built using:
 - Streamlit (UI)
@@ -12,6 +8,16 @@ Built using:
 - FAISS (vector search)
 - HuggingFace (embeddings)
 - Groq (LLM for fast answers)
+
+---
+
+## 🚀 Live Demo
+
+Click here : 👇
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-q-a-system-rp.streamlit.app/)
+
+st.info("⚡ First load may take few seconds (free hosting)")
 
 ---
 
