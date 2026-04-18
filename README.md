@@ -15,7 +15,7 @@ Built using:
 
 Click here : 👇
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-q-a-system-rp.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pdf-q-a-system-rp.streamlit.app/)
 
 st.info("⚡ First load may take few seconds (free hosting)")
 
