@@ -26,7 +26,7 @@ st.info("⚡ First load may take few seconds (free hosting)")
 - Upload any PDF
 - Automatic text extraction & chunking
 - Semantic search using embeddings
-- Fast AI answers using Groq (LLaMA 3.1)
+- Fast AI answers using Groq (LLaMA 3.3)
 - Clean and simple UI
 
 ---
@@ -139,4 +139,3 @@ MIT License — free to use, modify, and distribute.
 
 Give it a ⭐ on GitHub!
 
----
